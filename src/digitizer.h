@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2025 Zhangqi Li (@zhangqili)
+ * Copyright (c) 2025 Zellia-Keyboards
+ * Original Author: Zhangqi Li (@zhangqili)
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-
 #ifndef DIGITIZER_H
 #define DIGITIZER_H
 

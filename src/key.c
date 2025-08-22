@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2024 Zhangqi Li (@zhangqili)
+ * Copyright (c) 2025 Zellia-Keyboards
+ * Original Author: Zhangqi Li (@zhangqili)
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-
 #include "key.h"
 
 void key_update(Key* key,bool state)
