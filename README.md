@@ -1,7 +1,7 @@
 
 # Zellia Libamp
 
->Zellia Libamp is a powerful, modular C library for advanced keyboard firmware development, supporting analog keys, dynamic layers, mouse, joystick, MIDI, RGB lighting, and more. Forked from [zhangqili/libamp](https://github.com/zhangqili/), it is designed for custom keyboards and input devices.
+>Zellia Libamp is a powerful, modular C library for advanced hall effect keyboard firmware development, supporting analog keys, dynamic layers, mouse, joystick, MIDI, RGB lighting, and more. Forked from [zhangqili/libamp](https://github.com/zhangqili/), it is designed for custom hall effect keyboards.
 
 ## Features
 - **Advanced Key Handling**: Digital, analog, rapid, and speed modes for keys
