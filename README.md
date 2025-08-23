@@ -7,7 +7,6 @@
 - **Advanced Key Handling**: Digital, analog, rapid, and speed modes for keys
 - **Layer System**: Dynamic and momentary layers
 - **Mouse & Joystick**: Integrated mouse and joystick event handling
-- **MIDI Support**: Embedded MIDI device and function support
 - **RGB Lighting**: Lamp array and per-key RGB control
 - **Storage**: Persistent configuration storage
 - **Extensible**: Modular design for easy feature addition
