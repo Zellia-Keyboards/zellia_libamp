@@ -10,7 +10,6 @@
 #include "mouse.h"
 #include "layer.h"
 #include "record.h"
-#include "process_midi.h"
 #include "driver.h"
 #include "packet.h"
 
@@ -32,9 +31,6 @@
 #endif
 #ifdef JOYSTICK_ENABLE
 #include "joystick.h"
-#endif
-#ifdef MIDI_ENABLE
-#include "qmk_midi.h"
 #endif
 
 __WEAK const Keycode g_default_keymap[LAYER_NUM][ADVANCED_KEY_NUM + KEY_NUM];
@@ -355,9 +351,6 @@ void keyboard_init(void)
 #ifdef RGB_ENABLE
     rgb_init();
 #endif
-#ifdef MIDI_ENABLE
-    setup_midi();
-#endif
     keyboard_recovery();
 }
 
@@ -568,25 +561,6 @@ void keyboard_advanced_key_update_state(AdvancedKey *key, bool state)
     case DYNAMIC_KEY:
         const uint8_t dynamic_key_index = (keycode>>8)&0xFF;
         dynamic_key_update(&g_keyboard_dynamic_keys[dynamic_key_index], key, state);
-        break;
-#endif
-#ifdef MIDI_ENABLE
-    case MIDI_COLLECTION:
-    case MIDI_NOTE:
-        if (!key->key.state && state)
-        {
-            KeyboardEvent event = MK_EVENT(layer_cache_get_keycode(key->key.id), KEYBOARD_EVENT_KEY_DOWN, key);
-            midi_event_handler(event);
-            keyboard_advanced_key_event_handler(key,event);
-        }
-        if (key->key.state && !state)
-        {
-            KeyboardEvent event = MK_EVENT(layer_cache_get_keycode(key->key.id), KEYBOARD_EVENT_KEY_UP, key);
-            midi_event_handler(event);
-            keyboard_advanced_key_event_handler(key,event);
-        }
-        advanced_key_update_state(key, state);
-        key->key.report_state = state;
         break;
 #endif
 #ifdef MOUSE_ENABLE
